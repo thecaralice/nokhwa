@@ -7,7 +7,7 @@ keywords = ["camera", "webcam", "capture", "cross-platform"]
 license = "Apache-2.0"
 name = "uiua-nokhwa"
 repository = "https://github.com/l1npengtul/nokhwa"
-version = "0.10.4"
+version = "0.10.5"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

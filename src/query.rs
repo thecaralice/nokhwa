@@ -109,7 +109,7 @@ pub fn query(api: ApiBackend) -> Result<Vec<CameraInfo>, NokhwaError> {
 
 #[cfg(all(feature = "input-v4l", target_os = "linux"))]
 fn query_v4l() -> Result<Vec<CameraInfo>, NokhwaError> {
-    nokhwa_bindings_linux::query()
+    uiua_nokhwa_bindings_linux::query()
 }
 
 #[cfg(any(not(feature = "input-v4l"), not(target_os = "linux")))]
@@ -205,8 +205,8 @@ fn query_gstreamer() -> Result<Vec<CameraInfo>, NokhwaError> {
         prelude::{DeviceExt, DeviceMonitorExt, DeviceMonitorExtManual},
         Caps, DeviceMonitor,
     };
-    use uiua_nokhwa_core::types::CameraIndex;
     use std::str::FromStr;
+    use uiua_nokhwa_core::types::CameraIndex;
 
     if let Err(why) = gstreamer::init() {
         return Err(NokhwaError::GeneralError(format!(
@@ -266,7 +266,7 @@ fn query_gstreamer() -> Result<Vec<CameraInfo>, NokhwaError> {
 // please refer to https://docs.microsoft.com/en-us/windows/win32/medfound/enumerating-video-capture-devices
 #[cfg(all(feature = "input-msmf", target_os = "windows"))]
 fn query_msmf() -> Result<Vec<CameraInfo>, NokhwaError> {
-    nokhwa_bindings_windows::wmf::query_media_foundation_descriptors()
+    uiua_nokhwa_bindings_windows::wmf::query_media_foundation_descriptors()
 }
 
 #[cfg(any(not(feature = "input-msmf"), not(target_os = "windows")))]
