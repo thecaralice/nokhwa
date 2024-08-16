@@ -15,7 +15,7 @@
  */
 
 use crate::Camera;
-use nokhwa_core::{
+use uiua_nokhwa_core::{
     buffer::Buffer,
     error::NokhwaError,
     types::{

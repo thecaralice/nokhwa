@@ -1,0 +1,32 @@
+[package]
+authors = ["l1npengtul"]
+description = "The Windows Media Foundation bindings crate for `nokhwa`"
+edition = "2021"
+keywords = ["media-foundation", "windows", "capture", "webcam"]
+license = "Apache-2.0"
+name = "uiua-nokhwa-bindings-windows"
+repository = "https://github.com/l1npengtul/nokhwa"
+version = "0.4.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dependencies.uiua-nokhwa-core]
+path = "../uiua-nokhwa-core"
+version = "0.1.0"
+
+[target.'cfg(target_os="windows")'.dependencies.windows]
+features = [
+  "Win32_Media_MediaFoundation",
+  "Win32_System_Com",
+  "Win32_Foundation",
+  "Win32_Media_DirectShow",
+  "Win32_Media",
+  "Win32",
+  "Win32_Media_KernelStreaming",
+]
+version = "0.43"
+
+[target.'cfg(target_os="windows")'.dependencies.once_cell]
+version = "1.16"

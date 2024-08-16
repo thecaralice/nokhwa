@@ -16,7 +16,7 @@
 
 use crate::backends::capture::OpenCvCaptureDevice;
 use image::{buffer::ConvertBuffer, ImageBuffer, Rgb, RgbaImage};
-use nokhwa_core::{error::NokhwaError, traits::CaptureBackendTrait};
+use uiua_nokhwa_core::{error::NokhwaError, traits::CaptureBackendTrait};
 use std::{borrow::Cow, cell::RefCell, collections::HashMap};
 #[cfg(feature = "output-wgpu")]
 use wgpu::{

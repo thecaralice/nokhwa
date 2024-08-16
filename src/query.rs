@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-use nokhwa_core::{
+use uiua_nokhwa_core::{
     error::NokhwaError,
     types::{ApiBackend, CameraInfo},
 };
@@ -205,7 +205,7 @@ fn query_gstreamer() -> Result<Vec<CameraInfo>, NokhwaError> {
         prelude::{DeviceExt, DeviceMonitorExt, DeviceMonitorExtManual},
         Caps, DeviceMonitor,
     };
-    use nokhwa_core::types::CameraIndex;
+    use uiua_nokhwa_core::types::CameraIndex;
     use std::str::FromStr;
 
     if let Err(why) = gstreamer::init() {
@@ -281,7 +281,7 @@ fn query_msmf() -> Result<Vec<CameraInfo>, NokhwaError> {
     any(target_os = "macos", target_os = "ios")
 ))]
 fn query_avfoundation() -> Result<Vec<CameraInfo>, NokhwaError> {
-    use nokhwa_bindings_macos::query_avfoundation;
+    use uiua_nokhwa_bindings_macos::query_avfoundation;
 
     Ok(query_avfoundation()?
         .into_iter()

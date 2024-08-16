@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-use nokhwa_bindings_windows::wmf::MediaFoundationDevice;
-use nokhwa_core::{
+use uiua_nokhwa_bindings_windows::wmf::MediaFoundationDevice;
+use uiua_nokhwa_core::{
     buffer::Buffer,
     error::NokhwaError,
     pixel_format::RgbFormat,
